@@ -1,387 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Muhammad Haris | Senior Unity Game Developer</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperPixel Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    body { 
+      font-family: 'Inter', system-ui, sans-serif; 
+      scroll-behavior: smooth;
+    }
+    .hero-bg { 
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), 
+                  url('https://images.unsplash.com/photo-1616588587683-3d7c0e7e8c3e?w=1920') center/cover no-repeat fixed;
+    }
+    section { scroll-margin-top: 90px; }
+    .nav-link { transition: all 0.3s; }
+    .nav-link:hover { color: #22d3ee; transform: translateY(-2px); }
+  </style>
 </head>
-
-<body>
-
-<!--================ NAVBAR ================-->
-
-<nav>
-
-<div class="logo">
-
-MH
-
-</div>
-
-<ul>
-
-<li><a href="#home">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#skills">Skills</a></li>
-
-<li><a href="#games">Games</a></li>
-
-<li><a href="#experience">Experience</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<!--================ HERO ================-->
-
-<section class="hero" id="home">
-
-<div class="hero-content">
-
-<h3>Hello I'm</h3>
-
-<h1>Muhammad Haris</h1>
-
-<h2>Senior Unity Game Developer</h2>
-
-<p>
-
-5+ Years of experience developing high-performance Android, iOS and WebGL games.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#games" class="primary-btn">
-
-View Games
-
-</a>
-
-<a href="files/Muhammad_Haris_CV.pdf" class="secondary-btn">
-
-Download CV
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!--================ ABOUT ================-->
-
-<section id="about">
-
-<h2 class="section-title">
-
-About Me
-
-</h2>
-
-<div class="about-box">
-
-<div class="about-image">
-
-<img src="images/profile.png">
-
-</div>
-
-<div class="about-text">
-
-<h3>
-
-Senior Unity Developer
-
-</h3>
-
-<p>
-
-I specialize in creating polished mobile games using Unity.
-
-My expertise includes gameplay programming, optimization,
-
-Firebase, AdMob, PlayFab, in-app purchases,
-
-and publishing on Google Play and HTML5 platforms.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!--================ STATS ================-->
-
-<section class="stats">
-
-<div class="stat">
-
-<h2>5+</h2>
-
-<p>Years</p>
-
-</div>
-
-<div class="stat">
-
-<h2>50+</h2>
-
-<p>Games</p>
-
-</div>
-
-<div class="stat">
-
-<h2>100%</h2>
-
-<p>Passion</p>
-
-</div>
-
-<div class="stat">
-
-<h2>24/7</h2>
-
-<p>Learning</p>
-
-</div>
-
-</section>
-
-<!--================ SKILLS ================-->
-
-<section id="skills">
-
-<h2 class="section-title">
-
-Skills
-
-</h2>
-
-<div class="skills-grid">
-
-<div class="skill-card">Unity</div>
-
-<div class="skill-card">C#</div>
-
-<div class="skill-card">Firebase</div>
-
-<div class="skill-card">AdMob</div>
-
-<div class="skill-card">PlayFab</div>
-
-<div class="skill-card">DOTween</div>
-
-<div class="skill-card">Git</div>
-
-<div class="skill-card">Android</div>
-
-<div class="skill-card">iOS</div>
-
-<div class="skill-card">WebGL</div>
-
-</div>
-
-</section>
-
-<!--================ EXPERIENCE ================-->
-
-<section id="experience">
-
-<h2 class="section-title">
-
-Experience
-
-</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-
-<h3>
-
-Game Rezort
-
-</h3>
-
-<p>
-
-Unity Game Developer
-
-2020 - 2022
-
-</p>
-
-</div>
-
-<div class="timeline-item">
-
-<h3>
-
-9Pixels
-
-</h3>
-
-<p>
-
-Senior Unity Developer
-
-2023 - Present
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!--================ GAMES ================-->
-
-<section id="games">
-
-<h2 class="section-title">
-
-Featured Games
-
-</h2>
-
-<div class="games-grid">
-
-<div class="game-card">
-
-<img src="images/game1.jpg">
-
-<h3>Hyper Casual Game</h3>
-
-<p>
-
-Fast-paced mobile experience.
-
-</p>
-
-</div>
-
-<div class="game-card">
-
-<img src="images/game2.jpg">
-
-<h3>Puzzle Game</h3>
-
-<p>
-
-Creative puzzle gameplay.
-
-</p>
-
-</div>
-
-<div class="game-card">
-
-<img src="images/game3.jpg">
-
-<h3>Simulation Game</h3>
-
-<p>
-
-Realistic mechanics.
-
-</p>
-
-</div>
-
-<div class="game-card">
-
-<img src="images/game4.jpg">
-
-<h3>WebGL Game</h3>
-
-<p>
-
-Playable in browser.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!--================ CONTACT ================-->
-
-<section id="contact">
-
-<h2 class="section-title">
-
-Contact
-
-</h2>
-
-<div class="contact-box">
-
-<a href="#">
-
-<i class="bi bi-envelope-fill"></i>
-
-Email
-
-</a>
-
-<a href="#">
-
-<i class="bi bi-linkedin"></i>
-
-LinkedIn
-
-</a>
-
-<a href="#">
-
-<i class="bi bi-github"></i>
-
-Github
-
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Muhammad Haris
-
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script src="js/script.js"></script>
+<body class="bg-black text-white">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-black/95 backdrop-blur-lg z-50 border-b border-cyan-500/20">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-cyan-500/50">HP</div>
+        <span class="text-2xl font-bold tracking-widest">HYPERPIXEL</span>
+      </div>
+      <div class="flex gap-8 text-sm uppercase tracking-widest font-medium">
+        <a href="#home" class="nav-link">HOME</a>
+        <a href="#about" class="nav-link">ABOUT</a>
+        <a href="#games" class="nav-link">GAMES</a>
+        <a href="#services" class="nav-link">SERVICES</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Hero -->
+  <section id="home" class="hero-bg h-screen flex items-center">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h1 class="text-6xl md:text-7xl font-bold mb-6">HyperPixel Studio</h1>
+      <p class="text-2xl text-gray-300 mb-10">Creating Next-Gen Unity Experiences</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#about" class="px-10 py-4 bg-cyan-500 text-black font-semibold rounded-full hover:bg-white transition">Discover Us</a>
+        <a href="#games" class="px-10 py-4 border-2 border-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition">Explore Games</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 bg-zinc-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">About HyperPixel Studio</h2>
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-lg text-gray-300 leading-relaxed">
+          We are a passionate indie game studio specializing in high-quality Unity games. 
+          Our mission is to deliver fun, addictive, and visually stunning experiences across web and mobile platforms.
+        </p>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="mt-20">
+        <h3 class="text-3xl font-semibold text-center mb-10 text-cyan-400">Our Tech Stack</h3>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
+            <i class="fas fa-cube text-5xl text-cyan-400 mb-4"></i>
+            <h4 class="font-bold mb-2">Unity Engine</h4>
+            <p class="text-sm text-gray-400">Industry-standard engine for creating beautiful 2D & 3D games</p>
+          </div>
+          <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
+            <i class="fas fa-code text-5xl text-cyan-400 mb-4"></i>
+            <h4 class="font-bold mb-2">C# Programming</h4>
+            <p class="text-sm text-gray-400">Clean, efficient, and high-performance code</p>
+          </div>
+          <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
+            <i class="fas fa-globe text-5xl text-cyan-400 mb-4"></i>
+            <h4 class="font-bold mb-2">WebGL</h4>
+            <p class="text-sm text-gray-400">Optimized publishing for browser-based platforms like Playgama</p>
+          </div>
+          <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
+            <i class="fas fa-mobile-alt text-5xl text-cyan-400 mb-4"></i>
+            <h4 class="font-bold mb-2">iOS Development</h4>
+            <p class="text-sm text-gray-400">Native iOS builds with App Store optimization</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Game Categories -->
+  <section id="games" class="py-24 bg-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">Our Game Categories</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-purple-900/30 to-black p-10 rounded-3xl border border-purple-500/30 hover:border-purple-400 transition">
+          <h3 class="text-2xl font-bold mb-4">2D Games</h3>
+          <p class="text-gray-400">Pixel-perfect platformers, endless runners, and charming 2D adventures.</p>
+        </div>
+        <div class="bg-gradient-to-br from-cyan-900/30 to-black p-10 rounded-3xl border border-cyan-500/30 hover:border-cyan-400 transition">
+          <h3 class="text-2xl font-bold mb-4">3D Games</h3>
+          <p class="text-gray-400">Immersive 3D worlds, action games, and stunning visual experiences.</p>
+        </div>
+        <div class="bg-gradient-to-br from-pink-900/30 to-black p-10 rounded-3xl border border-pink-500/30 hover:border-pink-400 transition">
+          <h3 class="text-2xl font-bold mb-4">Hyper-Casual</h3>
+          <p class="text-gray-400">Addictive, easy-to-learn games designed for quick sessions and viral play.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-24 bg-zinc-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="text-center">
+          <i class="fas fa-gamepad text-6xl text-cyan-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4">Unity Game Development</h3>
+          <p class="text-gray-400">Complete game development from concept to polished product.</p>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-globe text-6xl text-cyan-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4">WebGL Publishing</h3>
+          <p class="text-gray-400">Expert optimization and deployment on Playgama and web platforms.</p>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-mobile-alt text-6xl text-cyan-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4">iOS Porting</h3>
+          <p class="text-gray-400">Seamless conversion and optimization for Apple App Store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 text-center text-gray-500">
+      <p>© 2026 HyperPixel Studio • Premium Unity Games on Playgama</p>
+    </div>
+  </footer>
 
 </body>
-
 </html>
