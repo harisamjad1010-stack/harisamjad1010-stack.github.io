@@ -12,12 +12,25 @@
       scroll-behavior: smooth;
     }
     .hero-bg { 
-      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), 
-                  url('https://images.unsplash.com/photo-1616588587683-3d7c0e7e8c3e?w=1920') center/cover no-repeat fixed;
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), 
+                  url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920') center/cover no-repeat fixed;
     }
-    section { scroll-margin-top: 90px; }
-    .nav-link { transition: all 0.3s; }
-    .nav-link:hover { color: #22d3ee; transform: translateY(-2px); }
+    section { scroll-margin-top: 80px; }
+
+    .category-card, .game-card, .service-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .game-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -10px rgb(34 211 238 / 0.25);
+    }
+    .horizontal-scroll {
+      scrollbar-width: none;
+    }
+    .horizontal-scroll::-webkit-scrollbar { display: none; }
+    .games-container {
+      padding: 30px 0 50px 0;
+    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -26,26 +39,43 @@
   <nav class="fixed top-0 w-full bg-black/95 backdrop-blur-lg z-50 border-b border-cyan-500/20">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-cyan-500/50">HP</div>
+        <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center font-bold text-xl">HP</div>
         <span class="text-2xl font-bold tracking-widest">HYPERPIXEL</span>
       </div>
-      <div class="flex gap-8 text-sm uppercase tracking-widest font-medium">
-        <a href="#home" class="nav-link">HOME</a>
-        <a href="#about" class="nav-link">ABOUT</a>
-        <a href="#games" class="nav-link">GAMES</a>
-        <a href="#services" class="nav-link">SERVICES</a>
+
+      <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-medium">
+        <a href="#home" class="hover:text-cyan-400 transition">HOME</a>
+        <a href="#about" class="hover:text-cyan-400 transition">ABOUT</a>
+        <a href="#games" class="hover:text-cyan-400 transition">GAMES</a>
+        <a href="#services" class="hover:text-cyan-400 transition">SERVICES</a>
+      </div>
+
+      <button id="mobile-menu-button" class="md:hidden text-3xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-lg border-t border-cyan-500/20 py-6">
+      <div class="flex flex-col items-center gap-6 text-lg">
+        <a href="#home" class="hover:text-cyan-400">HOME</a>
+        <a href="#about" class="hover:text-cyan-400">ABOUT</a>
+        <a href="#games" class="hover:text-cyan-400">GAMES</a>
+        <a href="#services" class="hover:text-cyan-400">SERVICES</a>
       </div>
     </div>
   </nav>
 
-  <!-- Home Hero -->
-  <section id="home" class="hero-bg h-screen flex items-center">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h1 class="text-6xl md:text-7xl font-bold mb-6">HyperPixel Studio</h1>
-      <p class="text-2xl text-gray-300 mb-10">Creating Next-Gen Unity Experiences</p>
+  <!-- Hero -->
+  <section id="home" class="hero-bg min-h-screen flex items-center">
+    <div class="max-w-5xl mx-auto px-6 text-center py-20 md:py-0">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">HyperPixel Studio</h1>
+      <p class="text-lg md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
+        We craft addictive, high-quality Unity games for Playgama, Google Play, and iOS. 
+        Specializing in hyper-casual, puzzle, simulation, and action games.
+      </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#about" class="px-10 py-4 bg-cyan-500 text-black font-semibold rounded-full hover:bg-white transition">Discover Us</a>
-        <a href="#games" class="px-10 py-4 border-2 border-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition">Explore Games</a>
+        <a href="#about" class="px-10 py-4 bg-cyan-500 text-black font-semibold rounded-full hover:bg-white transition text-lg">Discover Us</a>
+        <a href="#games" class="px-10 py-4 border-2 border-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition text-lg">Browse Games</a>
       </div>
     </div>
   </section>
@@ -54,93 +84,168 @@
   <section id="about" class="py-24 bg-zinc-950">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-5xl font-bold text-center mb-16">About HyperPixel Studio</h2>
-      <div class="max-w-3xl mx-auto text-center">
+      <div class="max-w-3xl mx-auto text-center mb-16">
         <p class="text-lg text-gray-300 leading-relaxed">
-          We are a passionate indie game studio specializing in high-quality Unity games. 
-          Our mission is to deliver fun, addictive, and visually stunning experiences across web and mobile platforms.
+          Passionate Unity game studio creating fun, addictive, and visually stunning experiences for web and mobile platforms.
         </p>
       </div>
 
-      <!-- Tech Stack -->
-      <div class="mt-20">
-        <h3 class="text-3xl font-semibold text-center mb-10 text-cyan-400">Our Tech Stack</h3>
-        <div class="grid md:grid-cols-4 gap-8">
-          <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
-            <i class="fas fa-cube text-5xl text-cyan-400 mb-4"></i>
-            <h4 class="font-bold mb-2">Unity Engine</h4>
-            <p class="text-sm text-gray-400">Industry-standard engine for creating beautiful 2D & 3D games</p>
-          </div>
-          <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
-            <i class="fas fa-code text-5xl text-cyan-400 mb-4"></i>
-            <h4 class="font-bold mb-2">C# Programming</h4>
-            <p class="text-sm text-gray-400">Clean, efficient, and high-performance code</p>
-          </div>
-          <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
-            <i class="fas fa-globe text-5xl text-cyan-400 mb-4"></i>
-            <h4 class="font-bold mb-2">WebGL</h4>
-            <p class="text-sm text-gray-400">Optimized publishing for browser-based platforms like Playgama</p>
-          </div>
-          <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
-            <i class="fas fa-mobile-alt text-5xl text-cyan-400 mb-4"></i>
-            <h4 class="font-bold mb-2">iOS Development</h4>
-            <p class="text-sm text-gray-400">Native iOS builds with App Store optimization</p>
-          </div>
+      <h3 class="text-3xl font-semibold text-center mb-10 text-cyan-400">Our Tech Stack</h3>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
+          <i class="fas fa-cube text-5xl text-cyan-400 mb-4"></i>
+          <h4 class="font-bold mb-2">Unity Engine</h4>
+          <p class="text-sm text-gray-400">Best for 2D, 3D & Hyper-casual games</p>
+        </div>
+        <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
+          <i class="fas fa-code text-5xl text-cyan-400 mb-4"></i>
+          <h4 class="font-bold mb-2">C# Programming</h4>
+          <p class="text-sm text-gray-400">Clean and high-performance code</p>
+        </div>
+        <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
+          <i class="fas fa-globe text-5xl text-cyan-400 mb-4"></i>
+          <h4 class="font-bold mb-2">WebGL</h4>
+          <p class="text-sm text-gray-400">Optimized for Playgama</p>
+        </div>
+        <div class="bg-zinc-900 p-8 rounded-3xl border border-cyan-500/20 text-center">
+          <i class="fas fa-mobile-alt text-5xl text-cyan-400 mb-4"></i>
+          <h4 class="font-bold mb-2">iOS</h4>
+          <p class="text-sm text-gray-400">Native App Store ready</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Game Categories -->
-  <section id="games" class="py-24 bg-black">
+  <section class="py-20 bg-black">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-16">Our Game Categories</h2>
+      <h2 class="text-4xl font-bold text-center mb-12">Game Categories</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gradient-to-br from-purple-900/30 to-black p-10 rounded-3xl border border-purple-500/30 hover:border-purple-400 transition">
-          <h3 class="text-2xl font-bold mb-4">2D Games</h3>
-          <p class="text-gray-400">Pixel-perfect platformers, endless runners, and charming 2D adventures.</p>
+        <div class="category-card bg-gradient-to-br from-purple-900/40 to-zinc-900 p-10 rounded-3xl border border-purple-500/30 text-center">
+          <h3 class="text-2xl font-bold mb-3">2D Games</h3>
+          <p class="text-gray-400">Pixel art, platformers & beautiful 2D worlds</p>
         </div>
-        <div class="bg-gradient-to-br from-cyan-900/30 to-black p-10 rounded-3xl border border-cyan-500/30 hover:border-cyan-400 transition">
-          <h3 class="text-2xl font-bold mb-4">3D Games</h3>
-          <p class="text-gray-400">Immersive 3D worlds, action games, and stunning visual experiences.</p>
+        <div class="category-card bg-gradient-to-br from-cyan-900/40 to-zinc-900 p-10 rounded-3xl border border-cyan-500/30 text-center">
+          <h3 class="text-2xl font-bold mb-3">3D Games</h3>
+          <p class="text-gray-400">Immersive environments and realistic gameplay</p>
         </div>
-        <div class="bg-gradient-to-br from-pink-900/30 to-black p-10 rounded-3xl border border-pink-500/30 hover:border-pink-400 transition">
-          <h3 class="text-2xl font-bold mb-4">Hyper-Casual</h3>
-          <p class="text-gray-400">Addictive, easy-to-learn games designed for quick sessions and viral play.</p>
+        <div class="category-card bg-gradient-to-br from-pink-900/40 to-zinc-900 p-10 rounded-3xl border border-pink-500/30 text-center">
+          <h3 class="text-2xl font-bold mb-3">Hyper-Casual</h3>
+          <p class="text-gray-400">Addictive, simple & viral mobile games</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Our Games -->
+  <section id="games" class="py-24 bg-zinc-950">
+    <div class="max-w-7xl mx-auto px-6 games-container">
+      <h2 class="text-5xl font-bold text-center mb-4">Our Games</h2>
+      <p class="text-center text-gray-400 mb-12">Swipe or scroll horizontally • Auto-scroll enabled</p>
+
+      <div id="games-scroll" class="flex gap-8 overflow-x-auto horizontal-scroll pb-8 snap-x snap-mandatory">
+        
+        <a href="https://play.google.com/store/apps/details?id=com.ips.birdsgame.birdsort.birdsortpuzzle" target="_blank" class="game-card w-full md:w-[340px] flex-shrink-0 bg-gradient-to-br from-purple-900/40 to-zinc-900 p-10 rounded-3xl border border-purple-500/30">
+          <img src="https://picsum.photos/id/1015/600/340" class="w-full h-44 object-cover rounded-2xl mb-6" alt="Bird Sort">
+          <h3 class="font-bold text-xl mb-3">Bird Sort Puzzle</h3>
+          <p class="text-gray-400 text-sm">Engaging sorting puzzle game where you match and organize colorful birds in a fun and relaxing way.</p>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.color.screw.jam.nuts.bolts" target="_blank" class="game-card w-full md:w-[340px] flex-shrink-0 bg-gradient-to-br from-cyan-900/40 to-zinc-900 p-10 rounded-3xl border border-cyan-500/30">
+          <img src="https://picsum.photos/id/201/600/340" class="w-full h-44 object-cover rounded-2xl mb-6" alt="Screw Jam">
+          <h3 class="font-bold text-xl mb-3">Color Screw Jam</h3>
+          <p class="text-gray-400 text-sm">Challenging nuts & bolts puzzle game. Unscrew and sort colorful pieces with satisfying mechanics.</p>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.goods.triple.match.sorting.puzzle.game" target="_blank" class="game-card w-full md:w-[340px] flex-shrink-0 bg-gradient-to-br from-pink-900/40 to-zinc-900 p-10 rounded-3xl border border-pink-500/30">
+          <img src="https://picsum.photos/id/237/600/340" class="w-full h-44 object-cover rounded-2xl mb-6" alt="Triple Match">
+          <h3 class="font-bold text-xl mb-3">Triple Match Sorting</h3>
+          <p class="text-gray-400 text-sm">Triple match puzzle combined with sorting mechanics for brain-teasing gameplay.</p>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.lt.city.car.driving.drifting.game" target="_blank" class="game-card w-full md:w-[340px] flex-shrink-0 bg-gradient-to-br from-amber-900/40 to-zinc-900 p-10 rounded-3xl border border-amber-500/30">
+          <img src="https://picsum.photos/id/180/600/340" class="w-full h-44 object-cover rounded-2xl mb-6" alt="City Car">
+          <h3 class="font-bold text-xl mb-3">City Car Drifting</h3>
+          <p class="text-gray-400 text-sm">Realistic city driving and drifting simulation with smooth controls and stunning visuals.</p>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.digging.hole.miner.simulator" target="_blank" class="game-card w-full md:w-[340px] flex-shrink-0 bg-gradient-to-br from-emerald-900/40 to-zinc-900 p-10 rounded-3xl border border-emerald-500/30">
+          <img src="https://picsum.photos/id/251/600/340" class="w-full h-44 object-cover rounded-2xl mb-6" alt="Miner">
+          <h3 class="font-bold text-xl mb-3">Digging Hole Miner</h3>
+          <p class="text-gray-400 text-sm">Exciting digging and mining simulation game. Dig deep and collect resources.</p>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.ls.goup.rooftop.parkour.games" target="_blank" class="game-card w-full md:w-[340px] flex-shrink-0 bg-gradient-to-br from-rose-900/40 to-zinc-900 p-10 rounded-3xl border border-rose-500/30">
+          <img src="https://picsum.photos/id/870/600/340" class="w-full h-44 object-cover rounded-2xl mb-6" alt="Parkour">
+          <h3 class="font-bold text-xl mb-3">Rooftop Parkour</h3>
+          <p class="text-gray-400 text-sm">High-energy rooftop running and parkour action game with challenging levels.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Services -->
-  <section id="services" class="py-24 bg-zinc-950">
+  <section id="services" class="py-24 bg-black">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-5xl font-bold text-center mb-16">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="text-center">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="service-card bg-gradient-to-br from-cyan-900/30 to-zinc-900 p-10 rounded-3xl border border-cyan-500/30 text-center">
           <i class="fas fa-gamepad text-6xl text-cyan-400 mb-6"></i>
           <h3 class="text-2xl font-bold mb-4">Unity Game Development</h3>
-          <p class="text-gray-400">Complete game development from concept to polished product.</p>
+          <p class="text-gray-400">End-to-end development of 2D, 3D, and hyper-casual games from concept to launch.</p>
         </div>
-        <div class="text-center">
-          <i class="fas fa-globe text-6xl text-cyan-400 mb-6"></i>
+        <div class="service-card bg-gradient-to-br from-purple-900/30 to-zinc-900 p-10 rounded-3xl border border-purple-500/30 text-center">
+          <i class="fas fa-globe text-6xl text-purple-400 mb-6"></i>
           <h3 class="text-2xl font-bold mb-4">WebGL Publishing</h3>
-          <p class="text-gray-400">Expert optimization and deployment on Playgama and web platforms.</p>
+          <p class="text-gray-400">Expert optimization and publishing for Playgama and other browser platforms.</p>
         </div>
-        <div class="text-center">
-          <i class="fas fa-mobile-alt text-6xl text-cyan-400 mb-6"></i>
+        <div class="service-card bg-gradient-to-br from-pink-900/30 to-zinc-900 p-10 rounded-3xl border border-pink-500/30 text-center">
+          <i class="fas fa-mobile-alt text-6xl text-pink-400 mb-6"></i>
           <h3 class="text-2xl font-bold mb-4">iOS Porting</h3>
-          <p class="text-gray-400">Seamless conversion and optimization for Apple App Store.</p>
+          <p class="text-gray-400">Seamless porting and optimization for iOS App Store with full compliance.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black py-12 border-t border-white/10">
+  <footer class="bg-zinc-950 py-12 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-6 text-center text-gray-500">
-      <p>© 2026 HyperPixel Studio • Premium Unity Games on Playgama</p>
+      <p>© 2026 HyperPixel Studio • Premium Unity Games</p>
     </div>
   </footer>
 
+  <script>
+    // Mobile Menu
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Auto Scroll for Games
+    const gamesContainer = document.getElementById('games-scroll');
+    let scrollInterval;
+
+    function startAutoScroll() {
+      scrollInterval = setInterval(() => {
+        gamesContainer.scrollBy({ left: 360, behavior: 'smooth' });
+        if (gamesContainer.scrollLeft + gamesContainer.clientWidth >= gamesContainer.scrollWidth - 100) {
+          gamesContainer.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+      }, 2800);
+    }
+
+    function stopAutoScroll() {
+      clearInterval(scrollInterval);
+    }
+
+    gamesContainer.addEventListener('mouseenter', stopAutoScroll);
+    gamesContainer.addEventListener('mouseleave', startAutoScroll);
+    window.onload = startAutoScroll;
+  </script>
 </body>
 </html>
